@@ -1,4 +1,3 @@
-import { auth } from "@/auth";
 import GetStartedButton from "@/components/button/GetStartedButton";
 import PricingButton from "@/components/button/PricingButton";
 import ContactCard from "@/components/card/ContactCard";
@@ -16,8 +15,6 @@ export const metadata: Metadata = {
 };
 
 const LandingPage = async () => {
-  const session = await auth();
-
   const pricingPackage: IPricingPackage[] = [
     {
       id: 1,
@@ -156,7 +153,7 @@ const LandingPage = async () => {
       {/* Dashboard Section */}
       <section className="relative w-full h-auto justify-center items-center hidden lg:flex">
         <div className="absolute z-10 px-40 w-[1400px]">
-          <DashboardView session={session!} />
+          <DashboardView />
         </div>
         <Image
           src={"/landing-page-bg-1.png"}

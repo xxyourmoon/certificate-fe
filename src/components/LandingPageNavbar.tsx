@@ -98,7 +98,12 @@ const LandingPageNavbar = ({ session }: { session: IAuthSession }) => {
               </Link>
             ))}
             <Button
-              className="bordered bg-yelloww hover:bg-yelloww/90 text-black flex items-center gap-2"
+              className={cn(
+                "bordered text-black flex items-center gap-2",
+                session
+                  ? "bg-greenn hover:bg-greenn/90"
+                  : "bg-yelloww hover:bg-yelloww/90",
+              )}
               onClick={() => router.push("/auth/sign-up")}
             >
               {session ? (
@@ -167,7 +172,12 @@ const LandingPageNavbar = ({ session }: { session: IAuthSession }) => {
             </Link>
           ))}
           <Button
-            className="bordered w-full bg-yelloww hover:bg-yelloww/90 text-black flex items-center gap-2"
+            className={cn(
+              "bordered text-black flex items-center gap-2",
+              session
+                ? "bg-greenn hover:bg-greenn/90"
+                : " bg-yelloww hover:bg-yelloww/90",
+            )}
             onClick={() => router.push("/auth/sign-up")}
           >
             {session ? (
