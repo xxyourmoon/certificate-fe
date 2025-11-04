@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     serverActions: {
       allowedOrigins: [
         "localhost:3000",
-        "certificate-be-production.up.railway.app",
+        "api-certify.hmtiudinus.org",
         "certificate-fe.vercel.app",
         "certify.hmtiudinus.org",
       ],
@@ -30,11 +30,11 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
       {
-        protocol:"http",
+        protocol: "http",
         hostname: "localhost",
         port: "3001",
         pathname: "/**",
-      }
+      },
     ],
   },
   logging: {
