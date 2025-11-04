@@ -25,13 +25,7 @@ import {
 } from "@/components/ui/table";
 
 //ICONS
-import {
-  ChevronsLeft,
-  ChevronsRight,
-  QrCode,
-  RefreshCw,
-  Trash2,
-} from "lucide-react";
+import { ChevronsLeft, ChevronsRight, QrCode, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { AddParticipantsButton } from "../button/AddParticipantsButton";
 import GeneralDialog from "../popup/GeneralDialog";
@@ -48,7 +42,6 @@ import { deleteAllParticipants } from "@/actions/mutation/participants/deleteAll
 import LoadingCircle from "../animation/LoadingCircle";
 import { AddAccountButton } from "../button/AddAccountButton";
 import { useParticipantsContext } from "@/context/ParticipantsContext";
-import { refreshParticipantsData } from "@/actions/refreshParticipantsData";
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
@@ -166,24 +159,6 @@ export function GeneralTable<TData, TValue>({
     } catch (error) {
       console.error("Error deleting all participants:", error);
       setIsLoading(false);
-    }
-  };
-  const refreshDataHandler = () => {
-    try {
-      toast.promise(refreshParticipantsData(), {
-        loading: "Refreshing participants data...",
-        success: () => {
-          refreshParticipants();
-          return "Participants data refreshed successfully";
-        },
-        error: (error) => {
-          console.error("Error refreshing participants data:", error);
-          return error.message as string;
-        },
-      });
-    } catch (error) {
-      console.error("Error refreshing participants data:", error);
-      toast.error("Error refreshing participants data");
     }
   };
   return (
@@ -364,14 +339,6 @@ export function GeneralTable<TData, TValue>({
                     <Trash2 size={16} />
                   </>
                 )}
-              </Button>
-              <Button
-                className="bordered  rounded-md bg-greenn hover:bg-greenn/90 text-black"
-                onClick={() => {
-                  refreshDataHandler();
-                }}
-              >
-                <RefreshCw />
               </Button>
             </div>
             <GeneralDialog
