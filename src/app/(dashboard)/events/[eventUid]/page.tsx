@@ -19,16 +19,11 @@ const EventPage = async ({
   params: Promise<{ eventUid: string }>;
 }) => {
   const { eventUid } = await params;
-  const session = await getSession();
+  // Session is guaranteed by middleware (proxy.ts) for protected routes
+  // Using non-null assertion since middleware ensures authentication
+  const session = (await getSession())!;
+  const token = session.token;
 
-  const token = session?.token;
-  if (!token) {
-    return (
-      <div className="w-full min-h-screen flex items-center justify-center">
-        Unauthorized access
-      </div>
-    );
-  }
   const eventData = await getEventByEventId(eventUid);
 
   if (!eventData) {

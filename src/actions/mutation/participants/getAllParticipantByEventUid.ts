@@ -1,4 +1,4 @@
-import { auth } from "@/auth";
+import { getSession } from "@/lib/get-session";
 import {
   IParticipantResponse,
   IParticipantData,
@@ -8,7 +8,7 @@ const getAllParticipanByEventUid = async (
   eventUid: string,
 ): Promise<IParticipantData[] | null | undefined> => {
   try {
-    const session = await auth();
+    const session = await getSession();
     if (!session) {
       console.error("Session is required");
       return null;

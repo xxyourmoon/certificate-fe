@@ -7,14 +7,14 @@ import {
   IParticipantAdd,
 } from "@/lib/types/Participants";
 import { revalidateTag } from "next/cache";
-import { auth } from "@/auth";
+import { getSession } from "@/lib/get-session";
 
 export const addParticipants = async (
   values: z.infer<typeof multipleParticipantSchema>,
   eventUid: string,
 ) => {
   try {
-    const session = await auth();
+    const session = await getSession();
     if (!session) {
       return {
         success: false,
