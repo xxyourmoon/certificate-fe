@@ -2,6 +2,7 @@ import { getEventByEventId } from "@/actions/mutation/events/getEventByEventId";
 import { FormalDesign1Template } from "@/components/template/FormalDesign1Template";
 import { FormalDesign2Template } from "@/components/template/FormalDesign2Template";
 import { FormalDesign3Template } from "@/components/template/FormalDesign3Template";
+import { SemnastiDesignTemplate } from "@/components/template/SemnastiDesignTemplate";
 import { TechnologyDesign1Template } from "@/components/template/TechnologyDesign1Template";
 import { TechnologyDesign2Template } from "@/components/template/TechnologyDesign2Template";
 import { TechnologyDesign3Template } from "@/components/template/TechnologyDesign3Template";
@@ -63,6 +64,13 @@ const PreviewPage = async ({ params }: Props) => {
     <>
       {eventData.eventTemplate === "DEFAULTDESIGN" ? (
         "DEFAULT DESIGN"
+      ) : eventData.eventTemplate === "SEMNASTIDESIGN" ? (
+        <div className="flex flex-col items-center justify-center">
+          <SemnastiDesignTemplate
+            mode="PREVIEW"
+            participantCertificateData={participantCertificateData}
+          />
+        </div>
       ) : eventData.eventTemplate === "FORMALDESIGN_1" ? (
         <div className="flex flex-col items-center justify-center">
           <FormalDesign1Template

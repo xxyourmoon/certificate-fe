@@ -24,6 +24,7 @@ import { TechnologyDesign2Template } from "../template/TechnologyDesign2Template
 import { TechnologyDesign3Template } from "../template/TechnologyDesign3Template";
 import { IEventParticipantCertificate } from "@/lib/types/Event";
 import { FormalDesign3Template } from "../template/FormalDesign3Template";
+import { SemnastiDesignTemplate } from "../template/SemnastiDesignTemplate";
 
 const templateOptions = [
   { value: "DEFAULTDESIGN", label: "Default Design" },
@@ -33,6 +34,7 @@ const templateOptions = [
   { value: "FORMALDESIGN_1", label: "Formal Design 1" },
   { value: "FORMALDESIGN_2", label: "Formal Design 2" },
   { value: "FORMALDESIGN_3", label: "Formal Design 3" },
+  { value: "SEMNASTIDESIGN", label: "SEMNASTI Design" },
 ];
 const CreateEventForm = () => {
   const router = useRouter();
@@ -225,6 +227,14 @@ const CreateEventForm = () => {
             {participantCertificateData !== null ? (
               participantCertificateData.eventTemplate === "DEFAULTDESIGN" ? (
                 <DefaultDesignTemplate eventData={form.getValues()} />
+              ) : participantCertificateData.eventTemplate ===
+                "SEMNASTIDESIGN" ? (
+                <div className="flex flex-col items-center justify-center">
+                  <SemnastiDesignTemplate
+                    mode="CREATE/EDIT"
+                    participantCertificateData={participantCertificateData}
+                  />
+                </div>
               ) : participantCertificateData.eventTemplate ===
                 "FORMALDESIGN_1" ? (
                 <div className="flex flex-col items-center justify-center">

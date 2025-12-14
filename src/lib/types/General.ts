@@ -114,6 +114,7 @@ export const createEventSchema = z.object({
       "FORMALDESIGN_1",
       "FORMALDESIGN_2",
       "FORMALDESIGN_3",
+      "SEMNASTIDESIGN",
     ],
     {
       errorMap: () => ({ message: "Design template must not be empty" }),
@@ -178,6 +179,7 @@ export const updateEventSchema = z
           "FORMALDESIGN_1",
           "FORMALDESIGN_2",
           "FORMALDESIGN_3",
+          "SEMNASTIDESIGN",
         ],
         {
           errorMap: () => ({ message: "Design template must not be empty" }),

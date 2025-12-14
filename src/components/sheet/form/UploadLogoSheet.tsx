@@ -17,6 +17,7 @@ import { Crop, Trash2 } from "lucide-react";
 import { FormalDesign1Template } from "@/components/template/FormalDesign1Template";
 import { FormalDesign2Template } from "@/components/template/FormalDesign2Template";
 import { FormalDesign3Template } from "@/components/template/FormalDesign3Template";
+import { SemnastiDesignTemplate } from "@/components/template/SemnastiDesignTemplate";
 
 type Props = {
   open: boolean;
@@ -245,6 +246,13 @@ export const UploadLogoSheet = ({ open, setOpen, eventData }: Props) => {
         {participantCertificateData !== null ? (
           participantCertificateData.eventTemplate === "DEFAULTDESIGN" ? (
             ""
+          ) : participantCertificateData.eventTemplate === "SEMNASTIDESIGN" ? (
+            <div className="flex flex-col items-center justify-center">
+              <SemnastiDesignTemplate
+                mode="CREATE/EDIT"
+                participantCertificateData={participantCertificateData}
+              />
+            </div>
           ) : participantCertificateData.eventTemplate === "FORMALDESIGN_1" ? (
             <div className="flex flex-col items-center justify-center">
               <FormalDesign1Template

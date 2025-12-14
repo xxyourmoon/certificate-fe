@@ -30,7 +30,7 @@ export const TemplateStakeholderImage = ({
           width={108}
           height={108}
           className={cn(
-            "flex items-center justify-center object-cover object-center rounded-full m-auto",
+            "flex items-center justify-center object-cover object-center rounded-full",
             classNamePhotoPath,
           )}
           alt={stakeholderData.name.slice(0, 2)}
