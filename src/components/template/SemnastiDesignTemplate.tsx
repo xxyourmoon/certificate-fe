@@ -1,19 +1,14 @@
 "use client";
 
-import { FormatDate } from "@/lib/functions";
 import { IEventParticipantCertificate } from "@/lib/types/Event";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useState } from "react";
 import { TemplateHeader } from "./components/TemplateHeader";
 import { TemplateCertificateNumber } from "./components/TemplateCertificateNumber";
-import { TemplateEventLogo } from "./components/TemplateEventLogo";
 import { TemplateContent } from "./components/TemplateContent";
 import { TemplateStakeholderImage } from "./components/TemplateStakeholderImage";
 import { TemplateStakeholderName } from "./components/TemplateStakeholderName";
-import { TemplateEventName } from "./components/TemplateEventName";
-import { TemplateEventTheme } from "./components/TemplateEventTheme";
-import { TemplateFooter } from "./components/TemplateFooter";
 
 type Props = {
   participantCertificateData?: IEventParticipantCertificate;
