@@ -1,6 +1,7 @@
 import { FormalDesign1Template } from "@/components/template/FormalDesign1Template";
 import { FormalDesign2Template } from "@/components/template/FormalDesign2Template";
 import { FormalDesign3Template } from "@/components/template/FormalDesign3Template";
+import { SemnastiDesignTemplate } from "@/components/template/SemnastiDesignTemplate";
 import { TechnologyDesign1Template } from "@/components/template/TechnologyDesign1Template";
 import { TechnologyDesign2Template } from "@/components/template/TechnologyDesign2Template";
 import { TechnologyDesign3Template } from "@/components/template/TechnologyDesign3Template";
@@ -77,6 +78,13 @@ const CertificateStakeholderPage = async ({
     <>
       {participantCertificateData.eventTemplate === "DEFAULTDESIGN" ? (
         "DEFAULT DESIGN"
+      ) : participantCertificateData.eventTemplate === "SEMNASTIDESIGN" ? (
+        <div className="flex flex-col items-center justify-start md:justify-start min-h-screen">
+          <SemnastiDesignTemplate
+            participantCertificateData={participantCertificateData}
+            mode="VIEW"
+          />
+        </div>
       ) : participantCertificateData.eventTemplate === "FORMALDESIGN_1" ? (
         <div className="flex flex-col items-center justify-start md:justify-start min-h-screen">
           <FormalDesign1Template

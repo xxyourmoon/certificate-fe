@@ -22,6 +22,7 @@ import { TechnologyDesign3Template } from "../template/TechnologyDesign3Template
 import { FormalDesign1Template } from "../template/FormalDesign1Template";
 import { FormalDesign2Template } from "../template/FormalDesign2Template";
 import { FormalDesign3Template } from "../template/FormalDesign3Template";
+import { SemnastiDesignTemplate } from "../template/SemnastiDesignTemplate";
 
 const templateOptions = [
   { value: "DEFAULTDESIGN", label: "Default Design" },
@@ -31,6 +32,7 @@ const templateOptions = [
   { value: "FORMALDESIGN_1", label: "Formal Design 1" },
   { value: "FORMALDESIGN_2", label: "Formal Design 2" },
   { value: "FORMALDESIGN_3", label: "Formal Design 3" },
+  { value: "SEMNASTIDESIGN", label: "SEMNASTI Design" },
 ];
 
 interface Props {
@@ -220,6 +222,14 @@ const UpdateEventForm = ({ eventData }: Props) => {
           participantCertificateData !== undefined ? (
             participantCertificateData.eventTemplate === "DEFAULTDESIGN" ? (
               ""
+            ) : participantCertificateData.eventTemplate ===
+              "SEMNASTIDESIGN" ? (
+              <div className="flex flex-col items-center justify-center">
+                <SemnastiDesignTemplate
+                  participantCertificateData={participantCertificateData}
+                  mode="CREATE/EDIT"
+                />
+              </div>
             ) : participantCertificateData.eventTemplate ===
               "FORMALDESIGN_1" ? (
               <div className="flex flex-col items-center justify-center">

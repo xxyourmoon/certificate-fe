@@ -40,7 +40,8 @@ export interface IEventCreate {
       | "TECHNOLOGYDESIGN_3"
       | "FORMALDESIGN_1"
       | "FORMALDESIGN_2"
-      | "FORMALDESIGN_3";
+      | "FORMALDESIGN_3"
+      | "SEMNASTIDESIGN";
   };
   stakeholder: {
     name: string;
@@ -84,7 +85,9 @@ export interface IEventData {
     | "TECHNOLOGYDESIGN_3"
     | "FORMALDESIGN_1"
     | "FORMALDESIGN_2"
-    | "FORMALDESIGN_3";
+    | "FORMALDESIGN_3"
+    | "SEMNASTIDESIGN";
+
   stakeholders: IEventStakeholder[] | null;
 }
 
